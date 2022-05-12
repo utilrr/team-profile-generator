@@ -1,270 +1,257 @@
-// TODO: Include packages needed for this application
-
-// console.log("Hello World");
-
 const inquirer = require("inquirer");
-
 const fs = require("fs");
-
-// const { fetchAsyncQuestionProperty } = require("inquirer/lib/utils/utils");
-
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 const generateMarkdown = require("./utils/generateMarkdown");
 
-// TODO: Create an array of questions for user input
-
-const questions = [
+// An array of manager questions
+const managerQuestions = [
   {
     type: "input",
-
-    name: "name",
-
-    message:
-      "Welcome to the README generator! To start, please provide your first & last name:",
-
-    validate: (nameInput) => {
-      if (nameInput) {
+    name: "managerName",
+    message: "What is the name of the team manager?",
+    validate: (userInput) => {
+      if (userInput) {
         return true;
       } else {
-        console.log("Please enter your name!");
-
+        console.log("You must enter a name.");
         return false;
       }
     },
   },
-
   {
     type: "input",
-
-    name: "github",
-
-    message: "Enter your GitHub username:",
-
-    validate: (githubInput) => {
-      if (githubInput) {
+    name: "employeeID",
+    message: "What is their employee ID?",
+    validate: (userInput) => {
+      if (userInput) {
         return true;
       } else {
-        console.log(
-          "Please link to your GitHub repo so users know where to find more of your work"
-        );
-
+        console.log("You must enter an ID.");
         return false;
       }
     },
   },
-
   {
     type: "input",
-
-    name: "email",
-
-    message: "Enter your email address:",
-
-    validate: (emailInput) => {
-      if (emailInput) {
+    name: "emailAddress",
+    message: "What is their email address?",
+    validate: (userInput) => {
+      if (userInput) {
         return true;
       } else {
-        console.log(
-          "Please provide a way for interested people to contact you"
-        );
-
+        console.log("You must enter a valid email address.");
         return false;
       }
     },
   },
-
   {
     type: "input",
-
-    name: "title",
-
-    message: "What is the title of your project?",
-
-    validate: (titleInput) => {
-      if (titleInput) {
+    name: "officeNumber",
+    message: "What is their office number?",
+    validate: (userInput) => {
+      if (userInput) {
         return true;
       } else {
-        console.log("Every project needs a title. Please try again.");
-
-        return false;
-      }
-    },
-  },
-
-  {
-    type: "input",
-
-    name: "description",
-
-    message: "Enter your project description here:",
-
-    validate: (descriptionInput) => {
-      if (descriptionInput) {
-        return true;
-      } else {
-        console.log(
-          'Please provide a description of your project. Unsure what to include? Visit the repo of this README generator and navigate to "Description: Questions to Consider" under Guidelines for some tips.'
-        );
-
-        return false;
-      }
-    },
-  },
-
-  {
-    type: "input",
-
-    name: "installation",
-
-    message: "What are the instructions for installation?",
-
-    validate: (installationInput) => {
-      if (installationInput) {
-        return true;
-      } else {
-        console.log(
-          "Please provide installation instructions to ensure users have the proper software to run your program!"
-        );
-
-        return false;
-      }
-    },
-  },
-
-  {
-    type: "input",
-
-    name: "usage",
-
-    message: "Instructions for usage:",
-
-    validate: (usageInput) => {
-      if (usageInput) {
-        return true;
-      } else {
-        console.log(
-          "Providing instructions for usage will help users properly navigate your project. Please try again."
-        );
-
-        return false;
-      }
-    },
-  },
-
-  {
-    type: "input",
-
-    name: "contributing",
-
-    message: "How can others contribute to this project?",
-
-    validate: (contributionInput) => {
-      if (contributionInput) {
-        return true;
-      } else {
-        console.log(
-          "Please provide instructions on how others can contribute to your project."
-        );
-
-        return false;
-      }
-    },
-  },
-
-  {
-    type: "input",
-
-    name: "tests",
-
-    message:
-      "Describe the tests written for your application and how to use them:",
-
-    validate: (testsInput) => {
-      if (testsInput) {
-        return true;
-      } else {
-        console.log("Please provide instructions on how to use your project.");
-
-        return false;
-      }
-    },
-  },
-
-  {
-    type: "confirm",
-
-    name: "confirmLicenses",
-
-    message: "Would you like to include a license?",
-
-    default: false,
-  },
-
-  {
-    type: "list",
-
-    name: "licenses",
-
-    message: "What license would you like to include?",
-
-    choices: ["MIT", "GPL", "CC--0"],
-
-    when: ({ confirmLicenses }) => {
-      if (confirmLicenses) {
-        return true;
-      } else {
+        console.log("You must enter a phone number.");
         return false;
       }
     },
   },
 ];
 
-// TODO: Create a function to write README file
-
-const writeToFile = (data) => {
-  return new Promise((resolve, reject) => {
-    // make a readme file and add to main folder
-
-    fs.writeFile("./README2.md", data, (err) => {
-      // if there's an error, reject the Promise and send the error to .catch() method
-
-      if (err) {
-        reject(err);
-
-        // return out of the function here to make sure the Promise doesn't continut to execute the resolve() function
-
-        return;
+//set of engineer questions
+const engineerQuestions = [
+  {
+    type: "input",
+    name: "engineerName",
+    message: "What is the name of the engineer?",
+    validate: (userInput) => {
+      if (userInput) {
+        return true;
+      } else {
+        console.log("You must enter a name.");
+        return false;
       }
+    },
+  },
+  {
+    type: "input",
+    name: "employeeID",
+    message: "What is their employee ID?",
+    validate: (userInput) => {
+      if (userInput) {
+        return true;
+      } else {
+        console.log("You must enter an ID.");
+        return false;
+      }
+    },
+  },
+  {
+    type: "input",
+    name: "emailAddress",
+    message: "What is their email address?",
+    validate: (userInput) => {
+      if (userInput) {
+        return true;
+      } else {
+        console.log("You must enter a valid email address.");
+        return false;
+      }
+    },
+  },
+  {
+    type: "input",
+    name: "gitHub",
+    message: "What is their GitHub user name?",
+    validate: (userInput) => {
+      if (userInput) {
+        return true;
+      } else {
+        console.log("You must enter a GitHub user name.");
+        return false;
+      }
+    },
+  },
+];
 
-      // if everything went well, resolve the Promise and send the successful data to the .then() method
+//set of intern questions
+const internQuestions = [
+  {
+    type: "input",
+    name: "internName",
+    message: "What is the interns name?",
+    validate: (userInput) => {
+      if (userInput) {
+        return true;
+      } else {
+        console.log("You must enter a name.");
+        return false;
+      }
+    },
+  },
+  {
+    type: "input",
+    name: "employeeID",
+    message: "What is their employee ID?",
+    validate: (userInput) => {
+      if (userInput) {
+        return true;
+      } else {
+        console.log("You must enter an employee ID.");
+        return false;
+      }
+    },
+  },
+  {
+    type: "input",
+    name: "emailAddress",
+    message: "What is their email address?",
+    validate: (userInput) => {
+      if (userInput) {
+        return true;
+      } else {
+        console.log("You must enter a valid email address.");
+        return false;
+      }
+    },
+  },
+  {
+    type: "input",
+    name: "school",
+    message: "What is the name of their school?",
+    validate: (userInput) => {
+      if (userInput) {
+        return true;
+      } else {
+        console.log("You must enter a school.");
+        return false;
+      }
+    },
+  },
+];
 
-      resolve({
-        ok: true,
+//what type of employee you want to add
+const employeeType = [
+  {
+    type: "list",
+    name: "employeeSelect",
+    message:
+      "Would you like to add an engineer or an intern or finish building your team?",
+    choices: ["engineer", "intern", "finish building team"],
+  },
+];
 
-        message: console.log(
-          "Success! Navigate to the main directory to see your README!"
-        ),
-      });
-    });
-  });
-};
-
-// TODO: Create a function to initialize app
-
-const init = () => {
-  return inquirer.prompt(questions);
-};
-
-// Function call to initialize app
-
-init()
-  .then((userInput) => {
-    return generateMarkdown(userInput);
-  })
-
-  .then((readmeInfo) => {
-    return writeToFile(readmeInfo);
-  })
-
-  .catch((err) => {
+//function to write the data to an html file
+function writeToFile(fileName, answers) {
+  const pageHTML = generatePage(answers);
+  fs.writeFile(fileName, pageHTML, (err) => {
+    if (err) throw err;
     console.log(err);
+    console.log("Page complete! Check out index.html to see the output!");
   });
+}
+
+//function to prompt appropriate questions/data based on user input
+function askEmployeeType() {
+  inquirer.prompt(employeeType).then((answers) => {
+    if (answers.employeeSelect.includes("engineer")) {
+      inquirer.prompt(engineerQuestions).then((answers) => {
+        employees.push(
+          new Engineer(
+            answers.engineerName,
+            answers.employeeID,
+            answers.emailAddress,
+            answers.gitHub
+          )
+        );
+        console.log("answers", employees);
+        askEmployeeType();
+      });
+    }
+    if (answers.employeeSelect.includes("intern")) {
+      inquirer.prompt(internQuestions).then((answers) => {
+        employees.push(
+          new Intern(
+            answers.internName,
+            answers.employeeID,
+            answers.emailAddress,
+            answers.school
+          )
+        );
+        console.log("answers", employees);
+        askEmployeeType();
+      });
+    }
+    if (answers.employeeSelect.includes("finish building team")) {
+      writeToFile("index.html", employees);
+      console.log("finish building team", answers);
+    }
+  });
+}
+
+//function to begin series of team building questions
+function init() {
+  inquirer
+    .prompt(managerQuestions)
+    .then((answers) => {
+      employees.push(
+        new Manager(
+          answers.managerName,
+          answers.employeeID,
+          answers.emailAddress,
+          answers.officeNumber
+        )
+      );
+      console.log("answers", employees);
+      askEmployeeType();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+//function call
+init();
