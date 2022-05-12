@@ -1,13 +1,14 @@
 /* background image styling for the whole page */
 body {
-    background-image: repeating-linear-gradient(15deg,lightcyan,lightgreen 70px,aqua 140px);
+   /*  background-image: repeating-linear-gradient(15deg,lightcyan,lightgreen 70px,aqua 140px); */
+   background-color: blanchedalmond;
     background-attachment:fixed;
     min-height: 100vh;
 }
 
 /* border styling for the header  */
 header {
-    border-style:ridge;
+    border-style: none;
     border-width: 10px;
     border-radius: 20px;
     margin: 10px;
@@ -15,7 +16,7 @@ header {
 
 /* border styling for each employee data card  */
 .card{
-    border-style: ridge;
+    border-style: none;
     border-width: 10px;
     border-radius: 10px;
     margin: 10px;
@@ -23,7 +24,7 @@ header {
 
 /* styling for each employees name and role  */
 .title {
-    border-style: ridge;
+    border-style: none;
     border-width: 5px;
     border-radius: 10px;
     padding: 5px;

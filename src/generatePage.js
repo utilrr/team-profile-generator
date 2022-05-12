@@ -120,7 +120,7 @@ function generatePage(answers) {
     <header class="hero is-primary">
         <div class="hero-body">
           <p class="hero is-size-2 has-text-centered">
-            My Team
+            The Team
           </p>
         </div>
     </header>
