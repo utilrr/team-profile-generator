@@ -4,7 +4,7 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 let employees = [];
-// const generateMarkdown = require("./utils/generateMarkdown");
+const generatePage = require("./src/generatePage.js");
 
 // An array of manager questions
 const managerQuestions = [
