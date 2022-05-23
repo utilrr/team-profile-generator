@@ -3,7 +3,7 @@ const fs = require("fs");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const Employee = require("./lib/Employee");
+// const Employee = require("./lib/Employee");
 // const generateMarkdown = require("./utils/generateMarkdown");
 
 // An array of manager questions
@@ -59,6 +59,15 @@ const managerQuestions = [
         return false;
       }
     },
+  },
+];
+
+const newEmployee = [
+  {
+    type: "list",
+    name: "newEmployee",
+    message: "Would you like to add a new Employee?",
+    choices: ["Engineer", "Intern", "I'm Done Building the Team!"],
   },
 ];
 
@@ -238,7 +247,7 @@ function init() {
   inquirer
     .prompt(managerQuestions)
     .then((answers) => {
-      employees.push(
+      // employees.push(
         new Manager(
           answers.managerName,
           answers.employeeID,
