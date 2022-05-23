@@ -34,9 +34,10 @@ Start by running `node index.js` in the terminal and just follow the instruction
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
    
 ## Challenges Faced
-The usual ones: time management issues due to outside distractions, problem solving/debugging of code, fixing tests, too many friends dying (seriously, it's getting ridiculous)
+The usual ones: time management issues due to outside distractions, problem solving/debugging of code, fixing tests, I must get better at defining/declaring my functions.
 ## Deployed Website/Video link
-(Missing until I fix an issue with my questions.)
+https://youtu.be/TyGS5C1Ta04
+
 ## My Repo link
 `https://github.com/utilrr/team-profile-generator`
 ## Screenshots w/ Captions
