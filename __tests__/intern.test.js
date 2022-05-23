@@ -14,5 +14,5 @@ test("Intern class", () => {
   expect(intern.name).toBe("Sue");
   expect(intern.id).toBe("1234");
   expect(intern.email).toBe("sue@email.com");
-  expect(intern.school).toBe("Code U.");
+  expect(intern.school).toBe("UNC");
 });
