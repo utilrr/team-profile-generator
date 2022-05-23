@@ -3,14 +3,15 @@ const fs = require("fs");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const generateMarkdown = require("./utils/generateMarkdown");
+const Employee = require("./lib/Employee");
+// const generateMarkdown = require("./utils/generateMarkdown");
 
 // An array of manager questions
 const managerQuestions = [
   {
     type: "input",
     name: "managerName",
-    message: "What is the name of the team manager?",
+    message: "What is the manager's name?",
     validate: (userInput) => {
       if (userInput) {
         return true;
@@ -49,7 +50,7 @@ const managerQuestions = [
   {
     type: "input",
     name: "officeNumber",
-    message: "What is their office number?",
+    message: "What is their office phone number?",
     validate: (userInput) => {
       if (userInput) {
         return true;
@@ -66,7 +67,7 @@ const engineerQuestions = [
   {
     type: "input",
     name: "engineerName",
-    message: "What is the name of the engineer?",
+    message: "What is the engineer's name?",
     validate: (userInput) => {
       if (userInput) {
         return true;
@@ -122,7 +123,7 @@ const internQuestions = [
   {
     type: "input",
     name: "internName",
-    message: "What is the interns name?",
+    message: "What is the intern's name?",
     validate: (userInput) => {
       if (userInput) {
         return true;

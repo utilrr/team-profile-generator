@@ -32,14 +32,20 @@ Start by running `node index.js` in the terminal and just follow the instruction
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
    
 ## Challenges Faced
-The usual ones: time management, problem solving, fixing tests, 
-## Deployed Website link
-
+The usual ones: time management issues due to outside distractions, problem solving/debugging of code, fixing tests, too many friends dying (seriously, it's getting ridiculous)
+## Deployed Website/Video link
+(Missing until I fix an issue with my questions.)
 ## My Repo link
-
+`https://github.com/utilrr/team-profile-generator`
 ## Screenshots w/ Captions
 
+![Screen Shot 2022-05-22 at 9 18 41 PM](https://user-images.githubusercontent.com/25494815/169732132-184163f4-f597-4a30-9448-17c0e265c945.png)
 
+Here's the skeleton crew.
+
+![Screen Shot 2022-05-22 at 9 19 35 PM](https://user-images.githubusercontent.com/25494815/169732150-338a9d07-a14d-4830-801c-73e1590d819e.png)
+
+My testing works!
 ### Contribution
 Made with ❤️ by [Mark Healy]
 ### ©️2022 
