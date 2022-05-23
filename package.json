@@ -2,5 +2,27 @@
   "dependencies": {
     "inquirer": "^8.2.4",
     "jest": "^28.1.0"
-  }
+  },
+  "name": "team-profile-generator",
+  "description": "## Description of Project AS A manager I WANT to generate a webpage that displays my team's basic info SO THAT I have quick access to their emails and GitHub profiles",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/utilrr/team-profile-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/utilrr/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/utilrr/team-profile-generator#readme"
 }
